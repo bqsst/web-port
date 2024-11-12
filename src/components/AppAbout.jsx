@@ -1,19 +1,33 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const AppAboutBody = (props) => {
-
     const { reset } = props;
+    const [isLoading, setIsLoading] = useState(true);
+
+    const handleImageLoad = () => {
+        setIsLoading(false);
+    };
 
     return (
         <div className="h-[450px] flex flex-col md:flex-row space-x-20 items-center justify-center sm:px-20">
             <div className="h-full w-full sm:w-2/3 md:w-full lg:w-1/2">
-                <img src="/assets/my-picture.png" alt="mypic" className="object-contain w-full h-full mt-20 md:mt-0" />
+                {isLoading && (
+                    <div className="absolute inset-0 right-[45%] flex items-center justify-center">
+                        <div className="loader border-t-transparent border-4 border-violet-600 rounded-full w-10 h-10 animate-spin"></div>
+                    </div>
+                )}
+                <img
+                    src="/assets/my-picture.png"
+                    alt="mypic"
+                    className={`object-contain w-full h-full mt-20 md:mt-0 ${isLoading ? 'hidden' : ''}`}
+                    onLoad={handleImageLoad}
+                />
             </div>
             <div className="h-full w-full lg:w-1/2 pt-24 space-y-4">
                 <h1 className="text-xl sm:text-3xl md:text-2xl lg:text-3xl font-semibold">About Me</h1>
-                <h1
-                    className={`overflow-hidden whitespace-nowrap text-xl sm:text-2xl md:text-xl lg:text-2xl text-violet-600 font-poppins ${!reset ? 'animate-typing' : ''
-                        }`}
+                <h1 className={`overflow-hidden whitespace-nowrap text-xl sm:text-2xl md:text-xl lg:text-2xl text-violet-600 font-poppins ${!reset ? 'animate-typing' : ''
+                    }`}
                     style={{ width: '0%' }}>
                     Web Developer
                 </h1>
