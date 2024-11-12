@@ -5,7 +5,7 @@ import AppProjectChild from "./AppProjectChild";
 const AppProJectBody = () => {
 
     const projectElement = datas.map((data, index) => {
-        return <AppProjectChild key={index} data={data} />
+        return <AppProjectChild index={index} data={data} />
     })
 
     return (
