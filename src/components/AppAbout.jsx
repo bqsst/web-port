@@ -37,8 +37,8 @@ const AppAboutBody = (props) => {
                 <p className="mt-4 text-base lg:text-lg">
                     <span className="font-semibold text-violet-600">Date of birth:</span> 9/10/2003 <br />
                     <span className="font-semibold text-violet-600">Sex:</span> Male <br />
-                    <span className="font-semibold text-violet-600">Nationality:</span> Cliambodia <br />
-                    <span className="font-semibold text-violet-600">GPA:</span> 4.00
+                    <span className="font-semibold text-violet-600">Nationality:</span> Thailand <br />
+                    <span className="font-semibold text-violet-600">GPA:</span> 3.53
                 </p>
                 <h1 className="text-xl lg:text-2xl font-medium mt-6">Interest</h1>
                 <p className="text-gray-600 mr-10 text-base md:text-base lg:text-lg">
